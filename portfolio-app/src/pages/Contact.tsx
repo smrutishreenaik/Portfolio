@@ -1,8 +1,10 @@
 import React from 'react'
 import { Container, Form, Button } from "react-bootstrap";
+import Footer from '../components/Footer';
 
 const Contact: React.FC = () => {
   return (
+    <>
     <Container className="mt-5">
       <h2>Contact Me</h2>
       <Form>
@@ -21,6 +23,8 @@ const Contact: React.FC = () => {
         <Button variant="primary" type="submit">Send</Button>
       </Form>
     </Container>
+    <Footer/>
+    </>
   );
 };
 
