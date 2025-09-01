@@ -1,15 +1,22 @@
 import React from 'react'
-import './App.css'
-import { Button } from 'react-bootstrap';
+import './App.scss'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import NavigationBar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Contact from "./pages/Contact";
 
-function App() {
-
+const App: React.FC = () => {
   return (
-    <>
-      Hello there
-      <Button variant='primary'>click me</Button>
-    </>
-  )
-}
+    <Router>
+      <NavigationBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+      <Footer />
+    </Router>
+  );
+};
 
-export default App
+export default App;
