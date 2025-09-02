@@ -1,11 +1,9 @@
 import React from 'react'
 import { Container, Form, Button } from "react-bootstrap";
-import Footer from '../components/Footer';
 
 const Contact: React.FC = () => {
   return (
-    <>
-    <Container className="mt-5">
+    <Container className="page">
       <h2>Contact Me</h2>
       <Form>
         <Form.Group className="mb-3">
@@ -23,8 +21,6 @@ const Contact: React.FC = () => {
         <Button variant="primary" type="submit">Send</Button>
       </Form>
     </Container>
-    <Footer/>
-    </>
   );
 };
 

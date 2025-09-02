@@ -1,17 +1,23 @@
 import React from 'react'
-import Footer from '../components/Footer';
 import Projects from '../components/Projects';
 import CaseStudy from '../components/CaseStudy';
+import { Col, Container, Row } from 'react-bootstrap';
 
 const ProjectAndCaseStudy: React.FC = () => {
-  return (
-    <>
-    Project and case study
-    <Projects/>
-    <CaseStudy/>
-    <Footer/>
-    </>
-  );
+    return (
+        <Container className="page">
+            <Row className="align-items-center">
+                <Col md={6} className="text-center">
+                    <Projects />
+                </Col>
+
+                <Col md={6} className="text-center">
+                    <CaseStudy />
+                </Col>
+            </Row>
+        </Container>
+
+    );
 };
 
 export default ProjectAndCaseStudy;

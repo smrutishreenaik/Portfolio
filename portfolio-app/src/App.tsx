@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import AboutAndExperience from './pages/AboutAndExperience';
 import ProjectAndCaseStudy from "./pages/ProjectAndCaseStudy"
+import Footer from './components/Footer';
 
 const App: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const App: React.FC = () => {
         <Route path="/project" element={<ProjectAndCaseStudy />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </Router>
   );
 };
