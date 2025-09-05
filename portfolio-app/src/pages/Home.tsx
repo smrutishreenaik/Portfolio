@@ -24,17 +24,38 @@ const Home: React.FC = () => {
           </h2>
 
           <div className="mt-4">
-            <Button variant="dark" className="me-2">
+            <Button
+              variant="dark"
+              className="me-2"
+              onClick={() => window.open("https://your-resume-link.com", "_blank")}
+            >
               Resume
             </Button>
-            <Button variant="dark" className="me-2">
+
+            <Button
+              variant="dark"
+              className="me-2"
+              onClick={() => window.location.href = "mailto:smrutishree.naik123@gmail.com"}
+            >
               Email
             </Button>
-            <a href="https://linkedin.com" className="text-dark fs-3 me-3">
-              linkedin
+
+            <a
+              href="https://www.linkedin.com/in/smrutishreenaik/"
+              className="text-dark fs-3 me-3"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
             </a>
-            <a href="https://github.com" className="text-dark fs-3 me-3">
-              github
+
+            <a
+              href="https://github.com/smrutishreenaik"
+              className="text-dark fs-3 me-3"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
             </a>
           </div>
         </Col>
