@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Button, Row, Col } from "react-bootstrap";
 import ProfileImg from "../assets/profilePic.jpeg"
+import HomeImg from "../assets/HomeImg.png"
 
 const Home: React.FC = () => {
   return (
@@ -22,6 +23,12 @@ const Home: React.FC = () => {
           <h2 className="text-secondary fw-bold">
             scalable, secure, and user-centric applications
           </h2>
+          <img
+            src={HomeImg}
+            alt="quick chat"
+            width={90}
+            className="icon-img mb-3"
+          />
 
           <div className="mt-4">
             <Button

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Container, Form, Button, Row, Col, Alert, Spinner } from "react-bootstrap";
 import emailjs from "emailjs-com";
+import ContactImg from "../assets/contactImg.png"
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", message: "" });
@@ -108,8 +109,9 @@ const Contact: React.FC = () => {
         <Col md={6} className="text-center">
           <h2 className="fw-bold text-muted">Let&apos;s have a quick chat</h2>
           <img
-            src="/assets/case-study.png"
+            src={ContactImg}
             alt="quick chat"
+            width={400}
             className="icon-img mb-3"
           />
 

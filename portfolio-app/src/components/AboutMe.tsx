@@ -1,12 +1,13 @@
 import React from 'react'
 import { Button, Container } from 'react-bootstrap';
+import AmoutMeImg from "../assets/AmoutMeImg.png"
 
 const AboutMe: React.FC = () => {
   return (
     <>
       <Container>
         <img
-          src="/assets/about-img.png"
+          src={AmoutMeImg}
           alt="About Me"
           className="mb-3"
           width={100}

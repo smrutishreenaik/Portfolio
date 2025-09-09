@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container } from 'react-bootstrap';
+import PastExpImg from "../assets/PastExpImg.png"
 
 interface TimelineItem {
   role: string;
@@ -34,7 +35,7 @@ const Experience: React.FC = () => {
     <Container>
       <div className="d-flex align-items-center mb-4">
         <img
-          src="/assets/experience-img.png"
+          src={PastExpImg}
           alt="Experience"
           width={70}
           className="me-3"
