@@ -2,8 +2,12 @@ import React from 'react'
 import { Container, Button, Row, Col } from "react-bootstrap";
 import ProfileImg from "../assets/profilePic.jpeg"
 import HomeImg from "../assets/HomeImg.png"
+import LinkedInLogo from "../assets/LinkedInLogo.png"
+import GitHubLogo from "../assets/GitHubLogo.png"
+import LeetCodeLogo from "../assets/LeetCodeLogo.png"
 
 const Home: React.FC = () => {
+
   return (
     <Container className="page">
       <Row className="align-items-center">
@@ -53,7 +57,13 @@ const Home: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              LinkedIn
+              <img
+                src={LinkedInLogo}
+                alt="LinkedIn"
+                width="30"
+                height="30"
+                style={{ verticalAlign: "middle" }}
+              />
             </a>
 
             <a
@@ -62,7 +72,28 @@ const Home: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              GitHub
+              <img
+                src={GitHubLogo}
+                alt="GitHub"
+                width="30"
+                height="30"
+                style={{ verticalAlign: "middle" }}
+              />
+            </a>
+
+            <a
+              href="https://leetcode.com/u/smrutishreenaik/"
+              className="text-dark fs-3 me-3"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={LeetCodeLogo}
+                alt="LeetCode"
+                width="30"
+                height="30"
+                style={{ verticalAlign: "middle" }}
+              />
             </a>
           </div>
         </Col>
