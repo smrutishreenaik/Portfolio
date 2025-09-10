@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <Container className="page">
+    <Container>
       <Row className="align-items-center">
         <Col md={6}>
           <h2>Contact Me</h2>

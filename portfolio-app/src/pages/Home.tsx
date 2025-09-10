@@ -9,7 +9,7 @@ import LeetCodeLogo from "../assets/LeetCodeLogo.png"
 const Home: React.FC = () => {
 
   return (
-    <Container className="page">
+    <Container>
       <Row className="align-items-center">
         <Col md={4} className="text-center">
           <img

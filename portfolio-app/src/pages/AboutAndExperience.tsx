@@ -6,7 +6,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 const AboutAndExperience: React.FC = () => {
 
     return (
-        <Container className="page">
+        <Container>
             <Row className="align-items-center">
                 <Col md={5} className="text-center">
                     <AboutMe />
