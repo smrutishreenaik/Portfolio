@@ -1,10 +1,11 @@
 import React from 'react'
-import { Container, Button, Row, Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import ProfileImg from "../assets/profilePic.jpeg"
 import HomeImg from "../assets/HomeImg.png"
 import LinkedInLogo from "../assets/LinkedInLogo.png"
 import GitHubLogo from "../assets/GitHubLogo.png"
 import LeetCodeLogo from "../assets/LeetCodeLogo.png"
+import ThreeDButton from '../components/ThreeDButton';
 
 const Home: React.FC = () => {
 
@@ -34,67 +35,65 @@ const Home: React.FC = () => {
             className="icon-img mb-3"
           />
 
-          <div className="mt-4">
-            <Button
-              variant="dark"
-              className="me-2"
-              onClick={() => window.open("https://your-resume-link.com", "_blank")}
-            >
-              Resume
-            </Button>
+          <div className="mt-4 row">
+            <div className="col-1 mx-2" >
+              <ThreeDButton label="Resume" onClick={() => window.open("https://your-resume-link.com", "_blank")} />
+            </div>
+            <div className="col-1 mx-2" >
+              <ThreeDButton label="Email" onClick={() => window.location.href = "mailto:smrutishree.naik123@gmail.com"} />
+            </div>
+            <div className='col'>
+              <span className='me-2'>
+                <a
+                  href="https://www.linkedin.com/in/smrutishreenaik/"
+                  className="text-dark fs-3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={LinkedInLogo}
+                    alt="LinkedIn"
+                    width="30"
+                    height="30"
+                    style={{ verticalAlign: "middle" }}
+                  />
+                </a>
+              </span>
 
-            <Button
-              variant="dark"
-              className="me-2"
-              onClick={() => window.location.href = "mailto:smrutishree.naik123@gmail.com"}
-            >
-              Email
-            </Button>
+              <span className='me-2'>
+                <a
+                  href="https://github.com/smrutishreenaik"
+                  className="text-dark fs-3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={GitHubLogo}
+                    alt="GitHub"
+                    width="30"
+                    height="30"
+                    style={{ verticalAlign: "middle" }}
+                  />
+                </a>
+              </span>
+              <span className='me-2'>
+                <a
+                  href="https://leetcode.com/u/smrutishreenaik/"
+                  className="text-dark fs-3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={LeetCodeLogo}
+                    alt="LeetCode"
+                    width="30"
+                    height="30"
+                    style={{ verticalAlign: "middle" }}
+                  />
+                </a>
+              </span>
+            </div>
 
-            <a
-              href="https://www.linkedin.com/in/smrutishreenaik/"
-              className="text-dark fs-3 me-3"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src={LinkedInLogo}
-                alt="LinkedIn"
-                width="30"
-                height="30"
-                style={{ verticalAlign: "middle" }}
-              />
-            </a>
-
-            <a
-              href="https://github.com/smrutishreenaik"
-              className="text-dark fs-3 me-3"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src={GitHubLogo}
-                alt="GitHub"
-                width="30"
-                height="30"
-                style={{ verticalAlign: "middle" }}
-              />
-            </a>
-
-            <a
-              href="https://leetcode.com/u/smrutishreenaik/"
-              className="text-dark fs-3 me-3"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src={LeetCodeLogo}
-                alt="LeetCode"
-                width="30"
-                height="30"
-                style={{ verticalAlign: "middle" }}
-              />
-            </a>
           </div>
         </Col>
       </Row>

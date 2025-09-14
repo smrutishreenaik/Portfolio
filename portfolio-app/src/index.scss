@@ -14,3 +14,27 @@ a {
   background-color: #000;
   height: 80vh;
 }
+
+.key-button {
+  position: relative;
+  background-color: white;
+  color: black;
+  font-weight: 600;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 0.5rem;
+  box-shadow: 0 8px black;
+  transition: all 0.1s ease-in-out;
+  /* transition: transform 0.2s ease, box-shadow 0.1s ease;
+  box-shadow: 0 4px 0 #111; */
+
+  &:hover {
+    background-color: lightgray;
+  }
+
+  &:active {
+    transform: translateY(8px);
+    box-shadow: none !important;
+    background-color: #d6d6d6;
+  }
+}
