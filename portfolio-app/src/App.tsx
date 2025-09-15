@@ -25,6 +25,7 @@ const App: React.FC = () => {
     const offsetPosition = elementTop - NAVBAR_HEIGHT - EXTRA_PADDING;
 
     window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+    if(ref === homeRef || ref === contactRef) return;
 
     setTimeout(() => {
       triggerShake(element);
