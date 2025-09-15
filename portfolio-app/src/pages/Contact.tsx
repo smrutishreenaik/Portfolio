@@ -2,8 +2,13 @@ import React, { useState } from 'react'
 import { Container, Form, Button, Row, Col, Alert, Spinner } from "react-bootstrap";
 import emailjs from "emailjs-com";
 import ContactImg from "../assets/contactImg.png"
+import type { RefObject } from 'react';
 
-const Contact: React.FC = () => {
+interface Props {
+  contactRef: RefObject<HTMLDivElement | null>;
+}
+
+const Contact: React.FC<Props> = ({ contactRef: contactRef }) => {
   const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState<string | null>(null);
@@ -45,7 +50,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <Container>
+    <Container ref={contactRef}>
       <Row className="align-items-center">
         <Col md={6}>
           <h2>Contact Me</h2>
