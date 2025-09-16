@@ -1,6 +1,7 @@
 import React from 'react'
-import { Button, Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import AmoutMeImg from "../assets/AmoutMeImg.png"
+import ThreeDButton from './ThreeDButton';
 
 const AboutMe: React.FC = () => {
   return (
@@ -20,9 +21,7 @@ const AboutMe: React.FC = () => {
           I specialize in building scalable and high-performing applications
           that enhance user experience.
         </p>
-        <Button variant="dark" className="mt-3 px-4 rounded-pill">
-          Let&apos;s Talk
-        </Button>
+        <ThreeDButton label="Let&apos;s Talk" />
       </Container>
     </>
   );

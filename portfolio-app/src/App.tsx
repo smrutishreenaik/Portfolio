@@ -5,6 +5,7 @@ import AboutAndExperience from './pages/AboutAndExperience';
 import ProjectAndCaseStudy from "./pages/ProjectAndCaseStudy"
 import Footer from './components/Footer';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import Testimonials from './pages/Testimonials';
 
 const App: React.FC = () => {
   const homeRef = useRef<HTMLDivElement>(null);
@@ -12,6 +13,7 @@ const App: React.FC = () => {
   const experienceRef = useRef<HTMLDivElement | null>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
   const caseStudyRef = useRef<HTMLDivElement>(null);
+  const testimonialRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
   const NAVBAR_HEIGHT = 220;
   const SHAKE_DELAY = 600;
@@ -52,6 +54,7 @@ const App: React.FC = () => {
               <Nav.Link onClick={() => handleScroll(experienceRef)}>Experience</Nav.Link>
               <Nav.Link onClick={() => handleScroll(projectsRef)}>Projects</Nav.Link>
               <Nav.Link onClick={() => handleScroll(caseStudyRef)}>Case Study</Nav.Link>
+              <Nav.Link onClick={() => handleScroll(testimonialRef)}>Testimonials</Nav.Link>
               <Nav.Link onClick={() => handleScroll(contactRef)}>Contact</Nav.Link>
             </Nav>
           </Navbar.Collapse>
@@ -68,6 +71,10 @@ const App: React.FC = () => {
 
       <div className="vh-100 d-flex align-items-center justify-content-center">
         <ProjectAndCaseStudy projectsRef={projectsRef} caseStudyRef={caseStudyRef} />
+      </div>
+
+      <div className="vh-100 d-flex align-items-center justify-content-center">
+        <Testimonials testimonialRef={testimonialRef}/>
       </div>
 
       <div className="vh-100 d-flex align-items-center justify-content-center">
