@@ -109,3 +109,25 @@ a {
     z-index: 0;
   }
 }
+
+.transparent-navbar {
+  background-color: white;
+  box-shadow: none !important;
+
+  .navbar-brand,
+  .nav-link {
+    color: #000 !important;
+    font-weight: 500;
+    font-size: large;
+    padding-top: 50px;
+    transition: all 0.25s ease-in-out;
+    padding-bottom: 20px;
+  }
+
+  .nav-link:hover {
+    color: white !important;
+    background-color: black !important;
+    padding-top: 70px;
+    padding-bottom: 0px;
+  }
+}

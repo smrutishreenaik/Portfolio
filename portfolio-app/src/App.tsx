@@ -43,7 +43,7 @@ const App: React.FC = () => {
 
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
+      <Navbar className="transparent-navbar" expand="lg" sticky="top">
         <Container>
           <Navbar.Brand onClick={() => handleScroll(homeRef)}>My Portfolio</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
