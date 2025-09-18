@@ -14,19 +14,19 @@ const timeline: TimelineItem[] = [
     role: "Senior Software Engineer",
     company: "Mindfire Solutions",
     duration: "Apr 2025 – Present",
-    logo: "/assets/company1.png",
+    logo: PastExpImg,
   },
   {
     role: "Full Stack Developer",
     company: "ENSTOA",
     duration: "Nov 2023 – Feb 2025",
-    logo: "/assets/company2.png",
+    logo: PastExpImg,
   },
   {
     role: "Junior Software Engineer",
     company: "EPAM",
     duration: "May 2022 – Nov 2023",
-    logo: "/assets/company3.png",
+    logo: PastExpImg,
   },
 ];
 
@@ -54,7 +54,7 @@ const Experience: React.FC = () => {
               alt={item.company}
               width={40}
               height={40}
-              className="me-3"
+              className="me-3 circular-img"
             />
             <div>
               <h5 className="mb-1">{item.role}</h5>
