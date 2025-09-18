@@ -14,9 +14,9 @@ const Contact: React.FC<Props> = ({ contactRef: contactRef }) => {
   const [success, setSuccess] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID?? "";
-  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID?? "";
-  const userId = import.meta.env.VITE_EMAILJS_USER_ID?? "";
+  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID ?? "";
+  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID ?? "";
+  const userId = import.meta.env.VITE_EMAILJS_USER_ID ?? "";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -53,10 +53,9 @@ const Contact: React.FC<Props> = ({ contactRef: contactRef }) => {
     <Container ref={contactRef}>
       <Row className="align-items-center">
         <Col md={6}>
-          <h2>Contact Me</h2>
           {success && <Alert variant="success">{success}</Alert>}
           {error && <Alert variant="danger">{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit} className='contact-container'>
             <Row>
               <Form.Group className="mb-3 col-6" controlId="formFirstName">
                 <Form.Label>First Name</Form.Label>
@@ -66,7 +65,6 @@ const Contact: React.FC<Props> = ({ contactRef: contactRef }) => {
                   value={formData.firstName}
                   onChange={handleChange}
                   required
-                  placeholder="Enter your first name"
                 />
               </Form.Group>
               <Form.Group className="mb-3 col-6" controlId="formLastName">
@@ -77,7 +75,6 @@ const Contact: React.FC<Props> = ({ contactRef: contactRef }) => {
                   value={formData.lastName}
                   onChange={handleChange}
                   required
-                  placeholder="Enter your last name"
                 />
               </Form.Group>
             </Row>
@@ -90,7 +87,6 @@ const Contact: React.FC<Props> = ({ contactRef: contactRef }) => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                placeholder="Enter your email"
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formMessage">
@@ -102,11 +98,10 @@ const Contact: React.FC<Props> = ({ contactRef: contactRef }) => {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                placeholder="Enter your message"
               />
             </Form.Group>
-            <Button variant="primary" type="submit" className="w-100" disabled={loading}>
-              {loading ? <Spinner animation="border" size="sm" /> : "Send Message"}
+            <Button type="submit" disabled={loading}>
+              {loading ? <Spinner animation="border" size="sm" /> : "Let's Talk"}
             </Button>
           </Form>
         </Col>
