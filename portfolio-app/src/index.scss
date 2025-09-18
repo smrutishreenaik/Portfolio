@@ -102,7 +102,6 @@ a {
     z-index: 1;
   }
 
-  // Hide other cards behind
   .offset-2 {
     opacity: 0;
     transform: translateY(150px) scale(0.6);
@@ -136,5 +135,28 @@ a {
     background-color: black !important;
     padding-top: 70px;
     padding-bottom: 0px;
+  }
+}
+
+.archivo-black-regular {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: xx-large;
+}
+
+.helloIam {
+  line-height: 0;
+}
+
+.video-wrapper {
+  position: relative;
+
+  .small-video {
+    position: absolute;
+    top: 32px;
+    left: 1200px;
+    width: 150px;
+    height: auto;
   }
 }

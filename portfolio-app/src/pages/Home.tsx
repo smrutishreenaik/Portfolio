@@ -1,16 +1,17 @@
 import React from 'react'
 import { Container, Row, Col } from "react-bootstrap";
 import ProfileImg from "../assets/profilePic.jpeg"
-import HomeImg from "../assets/HomeImg.png"
 import LinkedInLogo from "../assets/LinkedInLogo.png"
 import GitHubLogo from "../assets/GitHubLogo.png"
 import LeetCodeLogo from "../assets/LeetCodeLogo.png"
 import ThreeDButton from '../components/ThreeDButton';
+import LoopingVideo from '../components/LoopingVideo';
 
 const Home: React.FC = () => {
 
   return (
     <Container>
+      <LoopingVideo />
       <Row className="align-items-center">
         <Col md={4} className="text-center">
           <img
@@ -21,19 +22,17 @@ const Home: React.FC = () => {
         </Col>
 
         <Col md={8}>
-          <p className="fs-5 mb-1">HELLO! I am Smrutishree Naik</p>
-          <h1 className="fw-bold display-5">
-            Full Stack Developer with 3+ years of experience building
+          <p className="fs-2 helloIam">HELLO! I am</p>
+          <h1 className="fw-bold display-1 archivo-black-regular">
+            Smrutishree Naik
           </h1>
-          <h2 className="text-secondary fw-bold">
+          <h3 className="fw-bold">
+            Full Stack Developer with 3+ years of experience building
+          </h3>
+          <h3 className="text-secondary fw-bold ">
             scalable, secure, and user-centric applications
-          </h2>
-          <img
-            src={HomeImg}
-            alt="quick chat"
-            width={90}
-            className="icon-img mb-3"
-          />
+          </h3>
+
 
           <div className="mt-4 row">
             <div className="col-1 mx-2" >
