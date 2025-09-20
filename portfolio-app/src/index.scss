@@ -77,8 +77,13 @@ a {
     transition: transform 0.6s ease, opacity 0.6s ease;
     opacity: 0;
     z-index: 0;
-    border-radius: 15px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    //border-radius: 15px;
+    //box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 0.5rem;
+
   }
 
   // Center active card
@@ -86,6 +91,7 @@ a {
     transform: translateX(0) translateY(0) scale(1) rotateY(0deg);
     opacity: 1;
     z-index: 2;
+    box-shadow: 8px 8px 0px black;
   }
 
   // Left card (semi-circle effect)
@@ -93,6 +99,7 @@ a {
     transform: translateX(-200px) translateY(50px) scale(0.8) rotateY(25deg);
     opacity: 0.7;
     z-index: 1;
+    box-shadow: -8px 8px 0px black;
   }
 
   // Right card
@@ -100,12 +107,14 @@ a {
     transform: translateX(200px) translateY(50px) scale(0.8) rotateY(-25deg);
     opacity: 0.7;
     z-index: 1;
+    box-shadow: 8px 8px 0px black;
   }
 
   .offset-2 {
-    opacity: 0;
+    opacity: 0.5;
     transform: translateY(150px) scale(0.6);
     z-index: 0;
+    box-shadow: 0 8px black;
   }
 }
 
