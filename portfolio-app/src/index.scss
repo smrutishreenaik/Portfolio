@@ -152,10 +152,18 @@ a {
   font-weight: 400;
   font-style: normal;
   font-size: xx-large;
+  line-height: 0.8 !important;
 }
 
 .helloIam {
   line-height: 0;
+}
+
+.montserrat-regular {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .video-wrapper {
@@ -163,10 +171,11 @@ a {
 
   .small-video {
     position: absolute;
-    top: 32px;
+    top: 45px;
     left: 1200px;
     width: 150px;
     height: auto;
+    z-index: -1;
   }
 }
 

@@ -26,15 +26,13 @@ const Home: React.FC = () => {
           <h1 className="fw-bold display-1 archivo-black-regular">
             Smrutishree Naik
           </h1>
-          <h3 className="fw-bold">
+          <h3 className="fw-bold montserrat-regular">
             Full Stack Developer with 3+ years of experience building
           </h3>
-          <h3 className="text-secondary fw-bold ">
+          <h3 className="text-secondary fw-bold montserrat-regular">
             scalable, secure, and user-centric applications
           </h3>
-
-
-          <div className="mt-4 row">
+          <div className="mt-2 row">
             <div className="col-1 mx-2" >
               <ThreeDButton label="Resume" onClick={() => window.open("https://your-resume-link.com", "_blank")} />
             </div>
