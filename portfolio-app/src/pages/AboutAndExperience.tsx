@@ -7,14 +7,16 @@ import type { RefObject } from 'react';
 interface Props {
   aboutRef: RefObject<HTMLDivElement | null>;
   experienceRef: RefObject<HTMLDivElement | null>;
+  contactRef: RefObject<HTMLDivElement | null>;
+  handleScroll: (ref: React.RefObject<HTMLDivElement | null>) => void;
 }
 
-const AboutAndExperience: React.FC<Props> = ({ aboutRef, experienceRef }) => {
+const AboutAndExperience: React.FC<Props> = ({ aboutRef, experienceRef, contactRef, handleScroll }) => {
   return (
     <Container>
       <Row className="align-items-center">
         <Col md={5} className="text-center" ref={aboutRef}>
-            <AboutMe />
+          <AboutMe contactRef={contactRef} handleScroll={handleScroll} />
         </Col>
 
         <Col md={1} className="d-none d-md-flex justify-content-center">
@@ -22,7 +24,7 @@ const AboutAndExperience: React.FC<Props> = ({ aboutRef, experienceRef }) => {
         </Col>
 
         <Col md={6} className="text-center" ref={experienceRef}>
-            <Experience />
+          <Experience />
         </Col>
       </Row>
     </Container>

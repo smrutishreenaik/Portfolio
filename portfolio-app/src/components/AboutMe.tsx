@@ -2,8 +2,14 @@ import React from 'react'
 import { Container } from 'react-bootstrap';
 import AmoutMeImg from "../assets/AmoutMeImg.png"
 import ThreeDButton from './ThreeDButton';
+import type { RefObject } from 'react';
 
-const AboutMe: React.FC = () => {
+interface Props {
+  contactRef: RefObject<HTMLDivElement | null>;
+  handleScroll: (ref: React.RefObject<HTMLDivElement | null>) => void;
+}
+
+const AboutMe: React.FC<Props> = ({ contactRef, handleScroll }) => {
   return (
     <>
       <Container>
@@ -21,7 +27,7 @@ const AboutMe: React.FC = () => {
           I specialize in building scalable and high-performing applications
           that enhance user experience.
         </p>
-        <ThreeDButton label="Let&apos;s Talk" />
+        <ThreeDButton label="Let&apos;s Talk" onClick={() => handleScroll(contactRef)} />
       </Container>
     </>
   );
