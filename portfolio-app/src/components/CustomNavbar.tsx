@@ -1,15 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 
-const NAV_ITEMS = [
-    { key: "home", href: "home" },
-    { key: "about", href: "about" },
-    { key: "experience", href: "about" },
-    { key: "project", href: "project" },
-    { key: "case study", href: "project" },
-    { key: "testimonial", href: "testimonial" },
-    { key: "contact", href: "contact" },
-];
 
 const CustomNavbar: React.FC = () => {
     const [activeSection, setActiveSection] = useState("home");
@@ -21,8 +12,10 @@ const CustomNavbar: React.FC = () => {
             if (!ticking) {
                 window.requestAnimationFrame(() => {
                     let currentSection = "home";
-                    NAV_ITEMS.forEach((id) => {
-                        const section = document.getElementById(id.href);
+                    const sections = ["home", "about", "experience", "project", "testimonial", "contact"];
+
+                    sections.forEach((id) => {
+                        const section = document.getElementById(id);
                         if (section) {
                             const sectionTop = section.offsetTop - 80;
                             const sectionHeight = section.offsetHeight;
@@ -30,10 +23,11 @@ const CustomNavbar: React.FC = () => {
                                 window.scrollY >= sectionTop &&
                                 window.scrollY < sectionTop + sectionHeight
                             ) {
-                                currentSection = id.href;
+                                currentSection = id;
                             }
                         }
                     });
+
                     setActiveSection(currentSection);
                     ticking = false;
                 });
@@ -45,6 +39,23 @@ const CustomNavbar: React.FC = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    const handleNavClick = (targetId: string, sectionId?: string) => {
+        const target = document.getElementById(targetId);
+        if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+
+        if (sectionId) {
+            setTimeout(() => {
+                const el = document.getElementById(sectionId);
+                if (el) {
+                    el.classList.add("shake");
+                    setTimeout(() => el.classList.remove("shake"), 500);
+                }
+            }, 400);
+        }
+    };
+
 
     return (
         <Navbar expand="lg" sticky="top" bg="light">
@@ -52,16 +63,12 @@ const CustomNavbar: React.FC = () => {
             <Navbar.Toggle aria-controls="navbar-nav" />
             <Navbar.Collapse id="navbar-nav">
                 <Nav className="ms-auto">
-                    {NAV_ITEMS.map((item) => (
-                        <Nav.Link
-                            key={item.key}
-                            href={`#${item.href}`}
-                            aria-current={activeSection === item.href ? "page" : undefined}
-                            className={activeSection === item.href ? "active fw-bold" : ""}
-                        >
-                            {item.key.charAt(0).toUpperCase() + item.key.slice(1)}
-                        </Nav.Link>
-                    ))}
+                    <Nav.Link onClick={() => handleNavClick("home")} className={activeSection === "home" ? "active fw-bold" : ""}>Home</Nav.Link>
+                    <Nav.Link onClick={() => handleNavClick("about", "about-section")} className={activeSection === "about" ? "active fw-bold" : ""}>About</Nav.Link>
+                    <Nav.Link onClick={() => handleNavClick("about", "experience-section")} className={activeSection === "experience" ? "active fw-bold" : ""}>Experience</Nav.Link>
+                    <Nav.Link onClick={() => handleNavClick("project")} className={activeSection === "project" ? "active fw-bold" : ""}>Project</Nav.Link>
+                    <Nav.Link onClick={() => handleNavClick("testimonial")} className={activeSection === "testimonial" ? "active fw-bold" : ""}>Testimonial</Nav.Link>
+                    <Nav.Link onClick={() => handleNavClick("contact")} className={activeSection === "contact" ? "active fw-bold" : ""}>Contact</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
