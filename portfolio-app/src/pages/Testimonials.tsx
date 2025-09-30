@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import { Card, Container, Row, Col, Button } from "react-bootstrap";
-import type { RefObject } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-
-interface Props {
-  testimonialRef: RefObject<HTMLDivElement | null>;
-}
 
 const testimonials = [
   {
@@ -34,7 +29,7 @@ const testimonials = [
   },
 ];
 
-const Testimonials: React.FC<Props> = ({ testimonialRef: testimonialRef }) => {
+const Testimonials: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const prevTestimonial = () => {
@@ -47,7 +42,7 @@ const Testimonials: React.FC<Props> = ({ testimonialRef: testimonialRef }) => {
 
   return (
     <Container className="align-items-center">
-      <Container className="testimonials-container text-center py-5" ref={testimonialRef}>
+      <Container className="testimonials-container text-center py-5">
         <h2 className="mb-5">What People Say</h2>
         <div className="carousel-wrapper">
           {testimonials.map((testimonial, index) => {
