@@ -1,36 +1,50 @@
 import React, { useEffect, useState } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 
-const NAV_ITEMS = ["home", "about", "project", "testimonial", "contact"];
+const NAV_ITEMS = [
+    { key: "home", href: "home" },
+    { key: "about", href: "about" },
+    { key: "experience", href: "about" },
+    { key: "project", href: "project" },
+    { key: "case study", href: "project" },
+    { key: "testimonial", href: "testimonial" },
+    { key: "contact", href: "contact" },
+];
 
 const CustomNavbar: React.FC = () => {
     const [activeSection, setActiveSection] = useState("home");
 
     useEffect(() => {
+        let ticking = false;
+
         const handleScroll = () => {
-            let currentSection = "home";
-
-            NAV_ITEMS.forEach((id) => {
-                const section = document.getElementById(id);
-                if (section) {
-                    const sectionTop = section.offsetTop - 80; // adjust navbar height
-                    const sectionHeight = section.offsetHeight;
-
-                    if (
-                        window.scrollY >= sectionTop &&
-                        window.scrollY < sectionTop + sectionHeight
-                    ) {
-                        currentSection = id;
-                    }
-                }
-            });
-
-            setActiveSection(currentSection);
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    let currentSection = "home";
+                    NAV_ITEMS.forEach((id) => {
+                        const section = document.getElementById(id.href);
+                        if (section) {
+                            const sectionTop = section.offsetTop - 80;
+                            const sectionHeight = section.offsetHeight;
+                            if (
+                                window.scrollY >= sectionTop &&
+                                window.scrollY < sectionTop + sectionHeight
+                            ) {
+                                currentSection = id.href;
+                            }
+                        }
+                    });
+                    setActiveSection(currentSection);
+                    ticking = false;
+                });
+                ticking = true;
+            }
         };
 
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
 
     return (
         <Navbar expand="lg" sticky="top" bg="light">
@@ -40,11 +54,12 @@ const CustomNavbar: React.FC = () => {
                 <Nav className="ms-auto">
                     {NAV_ITEMS.map((item) => (
                         <Nav.Link
-                            key={item}
-                            href={`#${item}`}
-                            className={activeSection === item ? "active fw-bold" : ""}
+                            key={item.key}
+                            href={`#${item.href}`}
+                            aria-current={activeSection === item.href ? "page" : undefined}
+                            className={activeSection === item.href ? "active fw-bold" : ""}
                         >
-                            {item.charAt(0).toUpperCase() + item.slice(1)}
+                            {item.key.charAt(0).toUpperCase() + item.key.slice(1)}
                         </Nav.Link>
                     ))}
                 </Nav>
