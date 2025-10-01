@@ -58,7 +58,7 @@ const CustomNavbar: React.FC = () => {
 
 
     return (
-        <Navbar expand="lg" sticky="top" bg="light">
+        <Navbar expand="lg" sticky="top" className="transparent-navbar">
             <Navbar.Brand href="#home">Portfolio</Navbar.Brand>
             <Navbar.Toggle aria-controls="navbar-nav" />
             <Navbar.Collapse id="navbar-nav">
