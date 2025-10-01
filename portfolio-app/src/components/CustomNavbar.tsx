@@ -12,7 +12,7 @@ const CustomNavbar: React.FC = () => {
             if (!ticking) {
                 window.requestAnimationFrame(() => {
                     let currentSection = "home";
-                    const sections = ["home", "about", "experience", "project", "testimonial", "contact"];
+                    const sections = ["home", "aboutAndExperience", "projectAndCaseStudy", "testimonial", "contact"];
 
                     sections.forEach((id) => {
                         const section = document.getElementById(id);
@@ -64,9 +64,10 @@ const CustomNavbar: React.FC = () => {
             <Navbar.Collapse id="navbar-nav">
                 <Nav className="ms-auto">
                     <Nav.Link onClick={() => handleNavClick("home")} className={activeSection === "home" ? "active fw-bold" : ""}>Home</Nav.Link>
-                    <Nav.Link onClick={() => handleNavClick("about", "about-section")} className={activeSection === "about" ? "active fw-bold" : ""}>About</Nav.Link>
-                    <Nav.Link onClick={() => handleNavClick("about", "experience-section")} className={activeSection === "experience" ? "active fw-bold" : ""}>Experience</Nav.Link>
-                    <Nav.Link onClick={() => handleNavClick("project")} className={activeSection === "project" ? "active fw-bold" : ""}>Project</Nav.Link>
+                    <Nav.Link onClick={() => handleNavClick("aboutAndExperience", "about-section")} className={activeSection === "aboutAndExperience" ? "active fw-bold" : ""}>About</Nav.Link>
+                    <Nav.Link onClick={() => handleNavClick("aboutAndExperience", "experience-section")}>Experience</Nav.Link>
+                    <Nav.Link onClick={() => handleNavClick("projectAndCaseStudy", "project-section")} className={activeSection === "projectAndCaseStudy" ? "active fw-bold" : ""}>Project</Nav.Link>
+                    <Nav.Link onClick={() => handleNavClick("projectAndCaseStudy", "caseStudy-section")}>Case Study</Nav.Link>
                     <Nav.Link onClick={() => handleNavClick("testimonial")} className={activeSection === "testimonial" ? "active fw-bold" : ""}>Testimonial</Nav.Link>
                     <Nav.Link onClick={() => handleNavClick("contact")} className={activeSection === "contact" ? "active fw-bold" : ""}>Contact</Nav.Link>
                 </Nav>

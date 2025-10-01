@@ -16,11 +16,11 @@ const App: React.FC = () => {
         <Home />
       </div>
 
-      <div id="about" className="vh-100 d-flex align-items-center justify-content-center">
+      <div id="aboutAndExperience" className="vh-100 d-flex align-items-center justify-content-center">
         <AboutAndExperience />
       </div>
 
-      <div id="project" className="vh-100 d-flex align-items-center justify-content-center">
+      <div id="projectAndCaseStudy" className="vh-100 d-flex align-items-center justify-content-center">
         <ProjectAndCaseStudy />
       </div>
 
@@ -29,7 +29,7 @@ const App: React.FC = () => {
       </div>
 
       <div id="contact" className="vh-100 d-flex align-items-center justify-content-center">
-        <Contact  />
+        <Contact />
       </div>
 
       <Footer />
