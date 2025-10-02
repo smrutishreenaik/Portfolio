@@ -6,12 +6,13 @@ import GitHubLogo from "../assets/GitHubLogo.png"
 import LeetCodeLogo from "../assets/LeetCodeLogo.png"
 import ThreeDButton from '../components/ThreeDButton';
 import LoopingVideo from '../components/LoopingVideo';
+import HomeVideo from "../assets/HomeVideo.mp4"
 
 const Home: React.FC = () => {
 
   return (
     <Container>
-      <LoopingVideo />
+      <LoopingVideo videoSrc={HomeVideo} videoClassName='home-video' />
       <Row className="align-items-center">
         <Col md={4} className="text-center">
           <img

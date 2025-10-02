@@ -1,20 +1,15 @@
 import React from 'react'
 import { Container } from 'react-bootstrap';
-import AmoutMeImg from "../assets/AmoutMeImg.png"
 import ThreeDButton from './ThreeDButton';
-
+import LoopingVideo from './LoopingVideo';
+import AboutVideo from "../assets/AboutVideo.mp4"
 
 const AboutMe: React.FC = () => {
   return (
     <>
-      <Container>
-        <img
-          src={AmoutMeImg}
-          alt="About Me"
-          className="mb-3"
-          width={100}
-        />
-        <h1>
+      <Container className="text-start">
+        <LoopingVideo videoSrc={AboutVideo} videoClassName='about-video' />
+        <h1 className='fw-bold display-4'>
           About <span className="text-muted">Me !</span>
         </h1>
         <p className="mt-3">

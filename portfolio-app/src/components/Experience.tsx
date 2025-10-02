@@ -1,6 +1,8 @@
 import React from 'react'
 import { Container } from 'react-bootstrap';
 import PastExpImg from "../assets/PastExpImg.png"
+import LoopingVideo from './LoopingVideo';
+import ExpVideo from '../assets/ExpVideo.mp4'
 
 interface TimelineItem {
   role: string;
@@ -33,15 +35,10 @@ const timeline: TimelineItem[] = [
 const Experience: React.FC = () => {
   return (
     <Container>
-      <div className="d-flex align-items-center mb-4">
-        <img
-          src={PastExpImg}
-          alt="Experience"
-          width={70}
-          className="me-3"
-        />
-        <h1>
-          My <span className="text-muted">Past</span> <br />
+      <LoopingVideo videoSrc={ExpVideo} videoClassName='exp-video' />
+      <div className="d-flex text-start mb-4">
+        <h1 className='fw-bold display-5'>
+          <span className="text-muted">My Past</span> <br />
           Work Experience
         </h1>
       </div>

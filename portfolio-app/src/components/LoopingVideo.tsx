@@ -1,11 +1,15 @@
 import React from "react";
-import LowVideo from "../assets/low.mp4"
 
-const LoopingVideo: React.FC = () => {
+interface LoopingVideoProps {
+  videoSrc: string;        
+  videoClassName: string; 
+}
+
+const LoopingVideo: React.FC<LoopingVideoProps> = ({ videoSrc, videoClassName }) => {
   return (
     <div className="video-wrapper">
-      <video autoPlay loop muted playsInline className="small-video">
-        <source src={LowVideo} type="video/mp4" />
+      <video autoPlay loop muted playsInline className={videoClassName}>
+        <source src={videoSrc} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>
