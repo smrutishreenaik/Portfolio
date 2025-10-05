@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Container, Form, Button, Row, Col, Alert, Spinner } from "react-bootstrap";
 import emailjs from "emailjs-com";
-import ContactImg from "../assets/contactImg.png"
+import LoopingVideo from '../components/LoopingVideo';
+import ContactVideo from '../assets/ContactVideo.mp4';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", message: "" });
@@ -102,13 +103,9 @@ const Contact: React.FC = () => {
         </Col>
 
         <Col md={6} className="text-center">
-          <h2 className="fw-bold text-muted">Let&apos;s have a quick chat</h2>
-          <img
-            src={ContactImg}
-            alt="quick chat"
-            width={400}
-            className="icon-img mb-3"
-          />
+          <h2 className="fw-bold display-5">Let&apos;s have a</h2>
+          <h2 className="fw-bold text-muted display-5">Quick Chat</h2>
+          <LoopingVideo videoSrc={ContactVideo} videoClassName='contact-video' />
 
         </Col>
       </Row>
