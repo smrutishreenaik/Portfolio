@@ -12,23 +12,23 @@ const App: React.FC = () => {
   return (
     <>
       <CustomNavbar />
-      <div id="home" className="vh-100 d-flex align-items-center justify-content-center home-ctn">
+      <div id="home" className="no-vh-100 d-flex align-items-center justify-content-center home-ctn">
         <Home />
       </div>
 
-      <div id="aboutAndExperience" className="vh-100 d-flex align-items-center justify-content-center">
+      <div id="aboutAndExperience" className="no-vh-100 d-flex align-items-center justify-content-center">
         <AboutAndExperience />
       </div>
 
-      <div id="projectAndCaseStudy" className="vh-100 d-flex align-items-center justify-content-center">
+      <div id="projectAndCaseStudy" className="no-vh-100 d-flex align-items-center justify-content-center">
         <ProjectAndCaseStudy />
       </div>
 
-      <div id="testimonial" className="vh-100 d-flex align-items-center justify-content-center">
+      <div id="testimonial" className="no-vh-100 d-flex align-items-center justify-content-center">
         <Testimonials />
       </div>
 
-      <div id="contact" className="vh-100 d-flex align-items-center justify-content-center">
+      <div id="contact" className="no-vh-100 d-flex align-items-center justify-content-center">
         <Contact />
       </div>
 

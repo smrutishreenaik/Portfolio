@@ -1,6 +1,9 @@
 html {
   scroll-behavior: smooth;
 }
+.no-vh-100 {
+    height: 100vh;
+  }
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -345,24 +348,34 @@ a {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 426px) {
+  .no-vh-100 {
+    height: auto;
+  }
+  .home-ctn {
+    margin-top: 60px;
+  }
+  .helloIam {
+  line-height: 1;
+  margin-top: 20%;
+}
+.archivo-black-regular{
+  line-height: 1;
+}
+  .divider {
+  display: none;
+}
   .video-wrapper {
     .home-video {
-      top: -20px;
-      left: 95%;
-      width: 120px;
+      display: none;
     }
 
     .about-video {
-      top: -100px;
-      left: 20%;
-      width: 120px;
+      display: none;
     }
 
     .exp-video {
-      top: -60px;
-      left: 50%;
-      width: 120px;
+      display: none;
     }
 
     .contact-video {
