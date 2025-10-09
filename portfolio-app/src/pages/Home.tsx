@@ -33,14 +33,14 @@ const Home: React.FC = () => {
           <h3 className="text-secondary fw-bold montserrat-regular">
             scalable, secure, and user-centric applications
           </h3>
-          <div className="mt-2 row">
-            <div className="col-1 mx-2" >
+          <div className="mt-2 row mt-3">
+            <div className="col-2 col-md-1 mx-2" >
               <ThreeDButton label="Resume" onClick={() => window.open("https://your-resume-link.com", "_blank")} />
             </div>
-            <div className="col-1 mx-2" >
+            <div className="col-2 col-md-1 mx-2" >
               <ThreeDButton label="Email" onClick={() => window.location.href = "mailto:smrutishree.naik123@gmail.com"} />
             </div>
-            <div className='col'>
+            <div className='col m-1 m-md-0'>
               <span className='me-2'>
                 <a
                   href="https://www.linkedin.com/in/smrutishreenaik/"

@@ -7,7 +7,7 @@ const AboutAndExperience: React.FC = () => {
   return (
     <Container>
       <Row className="align-items-center">
-        <Col md={5} className="text-center" id="about-section">
+        <Col md={5} className="text-center mb-5 mb-md-0" id="about-section">
           <AboutMe />
         </Col>
 
@@ -15,7 +15,7 @@ const AboutAndExperience: React.FC = () => {
           <div className="divider"></div>
         </Col>
 
-        <Col md={6} className="text-center" id="experience-section">
+        <Col md={6} className="text-center mt-5 mt-md-0" id="experience-section">
           <Experience />
         </Col>
       </Row>

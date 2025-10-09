@@ -8,14 +8,14 @@ const ProjectAndCaseStudy: React.FC = () => {
     return (
         <Container>
             <Row className="align-items-center">
-                <Col md={5} className="text-center" id="project-section">
+                <Col md={5} className="text-center mb-5 mb-md-0" id="project-section">
                     <Projects />
                 </Col>
                 <Col md={1} className="d-none d-md-flex justify-content-center" >
                     <div className="divider" ></div>
                 </Col>
 
-                <Col md={6} className="text-center" id="caseStudy-section">
+                <Col md={6} className="text-center mt-5 mt-md-0" id="caseStudy-section">
                     <CaseStudy />
                 </Col>
             </Row>

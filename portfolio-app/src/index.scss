@@ -1,9 +1,10 @@
 html {
   scroll-behavior: smooth;
 }
+
 .no-vh-100 {
-    height: 100vh;
-  }
+  height: 100vh;
+}
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -351,20 +352,23 @@ a {
 @media (max-width: 426px) {
   .no-vh-100 {
     height: auto;
+    margin-bottom: 20%;
+    margin-top: auto;
   }
-  .home-ctn {
-    margin-top: 60px;
-  }
+
   .helloIam {
-  line-height: 1;
-  margin-top: 20%;
-}
-.archivo-black-regular{
-  line-height: 1;
-}
+    line-height: 1;
+    margin-top: 20%;
+  }
+
+  .archivo-black-regular {
+    line-height: 1;
+  }
+
   .divider {
-  display: none;
-}
+    display: none;
+  }
+
   .video-wrapper {
     .home-video {
       display: none;
