@@ -369,6 +369,11 @@ a {
     display: none;
   }
 
+  .card-slider {
+    touch-action: pan-y;
+    overflow: hidden;
+  }
+
   .video-wrapper {
     .home-video {
       display: none;

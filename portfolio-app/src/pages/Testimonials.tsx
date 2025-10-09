@@ -27,6 +27,26 @@ const items = [
 
 const Testimonials: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX === null) return;
+
+    const touchEnd = e.changedTouches[0].clientX;
+    const distance = touchStartX - touchEnd;
+
+    if (Math.abs(distance) > 50) {
+      if (distance > 0) nextSlide();
+      else prevSlide();
+    }
+
+    setTouchStartX(null);
+  };
+
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev === 0 ? items.length - 1 : prev - 1));
@@ -39,11 +59,15 @@ const Testimonials: React.FC = () => {
   return (
     <Container className="align-items-center">
       <div className="card-slider-container">
-        <button className="slider-btn left" onClick={prevSlide}>
+        <button className="slider-btn left d-none d-md-block" onClick={prevSlide}>
           <IoIosArrowBack size={22} />
         </button>
 
-        <div className="card-slider">
+        <div
+          className="card-slider"
+          onTouchStart={(e) => handleTouchStart(e)}
+          onTouchEnd={(e) => handleTouchEnd(e)}
+        >
           {items.map((item, index) => {
             const offset = (index - currentIndex + items.length) % items.length;
 
@@ -65,7 +89,7 @@ const Testimonials: React.FC = () => {
           })}
         </div>
 
-        <button className="slider-btn right" onClick={nextSlide}>
+        <button className="slider-btn right d-none d-md-block" onClick={nextSlide}>
           <IoIosArrowForward size={22} />
         </button>
 
