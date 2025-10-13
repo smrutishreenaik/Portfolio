@@ -365,6 +365,32 @@ a {
     line-height: 1;
   }
 
+  .transparent-navbar {
+    .navbar-brand,
+    .nav-link {
+      color: #000 !important;
+      font-weight: 500;
+      font-size: large;
+      padding-top: 20px;
+      transition: none;
+      padding-bottom: 20px;
+    }
+
+    .nav-link:hover {
+      color: white !important;
+      background-color: black !important;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .nav-link.active {
+      color: white !important;
+      background-color: black !important;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+
   .divider {
     display: none;
   }
