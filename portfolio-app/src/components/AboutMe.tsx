@@ -4,7 +4,11 @@ import ThreeDButton from './ThreeDButton';
 import LoopingVideo from './LoopingVideo';
 import AboutVideo from "../assets/AboutVideo.mp4"
 
-const AboutMe: React.FC = () => {
+interface AboutMeProps {
+  handleNavClick: (targetId: string, sectionId?: string) => void;
+}
+
+const AboutMe: React.FC<AboutMeProps> = ({ handleNavClick }) => {
   return (
     <>
       <Container className="text-start">
@@ -17,7 +21,7 @@ const AboutMe: React.FC = () => {
           I specialize in building scalable and high-performing applications
           that enhance user experience.
         </p>
-        <ThreeDButton label="Let&apos;s Talk"/>
+        <ThreeDButton label="Let&apos;s Talk" onClick={() => handleNavClick("contact")}/>
       </Container>
     </>
   );

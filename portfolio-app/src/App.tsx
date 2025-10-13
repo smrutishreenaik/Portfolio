@@ -5,19 +5,37 @@ import AboutAndExperience from './pages/AboutAndExperience';
 import ProjectAndCaseStudy from "./pages/ProjectAndCaseStudy"
 import Footer from './components/Footer';
 import Testimonials from './pages/Testimonials';
-import CustomNavbar from './components/CustomNavbar';
+import PortfolioNavbar from './components/PortfolioNavbar';
+
+const handleNavClick = (targetId: string, sectionId?: string) => {
+        const target = document.getElementById(targetId);
+        if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+
+        if (sectionId) {
+            setTimeout(() => {
+                const el = document.getElementById(sectionId);
+                if (el) {
+                    el.classList.add("shake");
+                    setTimeout(() => el.classList.remove("shake"), 500);
+                }
+            }, 400);
+        }
+    };
+
 
 const App: React.FC = () => {
 
   return (
     <>
-      <CustomNavbar />
+      <PortfolioNavbar handleNavClick={handleNavClick}/>
       <div id="home" className="no-vh-100 d-flex align-items-center justify-content-center home-ctn">
         <Home />
       </div>
 
       <div id="aboutAndExperience" className="no-vh-100 d-flex align-items-center justify-content-center">
-        <AboutAndExperience />
+        <AboutAndExperience  handleNavClick={handleNavClick}/>
       </div>
 
       <div id="projectAndCaseStudy" className="no-vh-100 d-flex align-items-center justify-content-center">

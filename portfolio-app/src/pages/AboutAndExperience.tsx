@@ -3,12 +3,16 @@ import AboutMe from '../components/AboutMe';
 import Experience from '../components/Experience';
 import { Col, Container, Row } from 'react-bootstrap';
 
-const AboutAndExperience: React.FC = () => {
+interface AboutMeProps {
+  handleNavClick: (targetId: string, sectionId?: string) => void;
+}
+
+const AboutAndExperience: React.FC<AboutMeProps> = ({ handleNavClick }) => {
   return (
     <Container>
       <Row className="align-items-center">
         <Col md={5} className="text-center mb-5 mb-md-0" id="about-section">
-          <AboutMe />
+          <AboutMe handleNavClick={handleNavClick}/>
         </Col>
 
         <Col md={1} className="d-none d-md-flex justify-content-center">

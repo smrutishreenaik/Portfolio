@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 
+interface PortfolioProps {
+  handleNavClick: (targetId: string, sectionId?: string) => void;
+}
 
-const CustomNavbar: React.FC = () => {
+const PortfolioNavbar: React.FC<PortfolioProps> = ( {handleNavClick} ) => {
     const [activeSection, setActiveSection] = useState("home");
 
     useEffect(() => {
@@ -39,24 +42,6 @@ const CustomNavbar: React.FC = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const handleNavClick = (targetId: string, sectionId?: string) => {
-        const target = document.getElementById(targetId);
-        if (target) {
-            target.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-
-        if (sectionId) {
-            setTimeout(() => {
-                const el = document.getElementById(sectionId);
-                if (el) {
-                    el.classList.add("shake");
-                    setTimeout(() => el.classList.remove("shake"), 500);
-                }
-            }, 400);
-        }
-    };
-
-
     return (
         <Navbar expand="lg" sticky="top" className="transparent-navbar">
             <Navbar.Brand href="#home">Portfolio</Navbar.Brand>
@@ -76,4 +61,4 @@ const CustomNavbar: React.FC = () => {
     );
 };
 
-export default CustomNavbar;
+export default PortfolioNavbar;
