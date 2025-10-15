@@ -2,16 +2,22 @@ import React, { useEffect, useState } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 
 interface PortfolioProps {
-  handleNavClick: (targetId: string, sectionId?: string) => void;
+    handleNavClick: (targetId: string, sectionId?: string) => void;
 }
 
-const PortfolioNavbar: React.FC<PortfolioProps> = ( {handleNavClick} ) => {
+const PortfolioNavbar: React.FC<PortfolioProps> = ({ handleNavClick }) => {
     const [activeSection, setActiveSection] = useState("home");
 
     useEffect(() => {
         let ticking = false;
 
         const handleScroll = () => {
+
+            if (window.innerWidth <= 480) {
+                setActiveSection("");
+                return;
+            }
+
             if (!ticking) {
                 window.requestAnimationFrame(() => {
                     let currentSection = "home";
