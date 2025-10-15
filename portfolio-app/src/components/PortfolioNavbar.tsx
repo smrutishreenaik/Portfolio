@@ -7,6 +7,16 @@ interface PortfolioProps {
 
 const PortfolioNavbar: React.FC<PortfolioProps> = ({ handleNavClick }) => {
     const [activeSection, setActiveSection] = useState("home");
+    const [expanded, setExpanded] = useState(false);
+
+    const handleNavItemClick = (targetId: string, sectionId?: string) => {
+        handleNavClick(targetId, sectionId);
+        if (window.innerWidth <= 480) {
+            setTimeout(() => {
+                setExpanded(false);
+            }, 800);
+        }
+    };
 
     useEffect(() => {
         let ticking = false;
@@ -49,18 +59,18 @@ const PortfolioNavbar: React.FC<PortfolioProps> = ({ handleNavClick }) => {
     }, []);
 
     return (
-        <Navbar expand="lg" sticky="top" className="transparent-navbar">
+        <Navbar expand="lg" sticky="top" className="transparent-navbar" expanded={expanded}>
             <Navbar.Brand href="#home">Portfolio</Navbar.Brand>
-            <Navbar.Toggle aria-controls="navbar-nav" />
+            <Navbar.Toggle aria-controls="navbar-nav" onClick={() => setExpanded(expanded ? false : true)} />
             <Navbar.Collapse id="navbar-nav">
                 <Nav className="ms-auto">
-                    <Nav.Link onClick={() => handleNavClick("home")} className={activeSection === "home" ? "active fw-bold" : ""}>Home</Nav.Link>
-                    <Nav.Link onClick={() => handleNavClick("aboutAndExperience", "about-section")} className={activeSection === "aboutAndExperience" ? "active fw-bold" : ""}>About</Nav.Link>
-                    <Nav.Link onClick={() => handleNavClick("aboutAndExperience", "experience-section")}>Experience</Nav.Link>
-                    <Nav.Link onClick={() => handleNavClick("projectAndCaseStudy", "project-section")} className={activeSection === "projectAndCaseStudy" ? "active fw-bold" : ""}>Project</Nav.Link>
-                    <Nav.Link onClick={() => handleNavClick("projectAndCaseStudy", "caseStudy-section")}>Case Study</Nav.Link>
-                    <Nav.Link onClick={() => handleNavClick("testimonial")} className={activeSection === "testimonial" ? "active fw-bold" : ""}>Testimonial</Nav.Link>
-                    <Nav.Link onClick={() => handleNavClick("contact")} className={activeSection === "contact" ? "active fw-bold" : ""}>Contact</Nav.Link>
+                    <Nav.Link onClick={() => handleNavItemClick("home")} className={activeSection === "home" ? "active fw-bold" : ""}>Home</Nav.Link>
+                    <Nav.Link onClick={() => handleNavItemClick("aboutAndExperience", "about-section")} className={activeSection === "aboutAndExperience" ? "active fw-bold" : ""}>About</Nav.Link>
+                    <Nav.Link onClick={() => handleNavItemClick("aboutAndExperience", "experience-section")}>Experience</Nav.Link>
+                    <Nav.Link onClick={() => handleNavItemClick("projectAndCaseStudy", "project-section")} className={activeSection === "projectAndCaseStudy" ? "active fw-bold" : ""}>Project</Nav.Link>
+                    <Nav.Link onClick={() => handleNavItemClick("projectAndCaseStudy", "caseStudy-section")}>Case Study</Nav.Link>
+                    <Nav.Link onClick={() => handleNavItemClick("testimonial")} className={activeSection === "testimonial" ? "active fw-bold" : ""}>Testimonial</Nav.Link>
+                    <Nav.Link onClick={() => handleNavItemClick("contact")} className={activeSection === "contact" ? "active fw-bold" : ""}>Contact</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
