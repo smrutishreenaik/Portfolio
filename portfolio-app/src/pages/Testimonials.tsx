@@ -65,20 +65,16 @@ const Testimonials: React.FC = () => {
 
         <div
           className="card-slider"
-          onTouchStart={(e) => handleTouchStart(e)}
-          onTouchEnd={(e) => handleTouchEnd(e)}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
           {items.map((item, index) => {
-            const offset = (index - currentIndex + items.length) % items.length;
-
-            let className = "slider-card";
-            if (offset === 0) className += " center";
-            else if (offset === 1) className += " right";
-            else if (offset === items.length - 1) className += " left";
-            else className += " hidden";
-
+            const isActive = index === currentIndex;
             return (
-              <div key={index} className={className}>
+              <div
+                key={index}
+                className={`slider-card ${isActive ? "center" : "hidden"}`}
+              >
                 <img src={item.image} alt={item.title} />
                 <div className="card-overlay">
                   <h3>{item.title}</h3>
@@ -88,6 +84,7 @@ const Testimonials: React.FC = () => {
             );
           })}
         </div>
+
 
         <button className="slider-btn right d-none d-md-block" onClick={nextSlide}>
           <IoIosArrowForward size={22} />
