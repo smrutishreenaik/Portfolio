@@ -69,9 +69,13 @@ const Testimonials: React.FC = () => {
             key={i}
             className={`slide ${i === currentIndex ? "active" : "hidden"}`}
           >
-            <img src={item.image} alt={item.title} />
+            <div className="img-card">
+              <img src={item.image} alt={item.title} className="profile-img"/>
+              <div className="card-title">{item.title}</div>
+            </div>
+            
+            <div className="description">{item.description}</div>
             <h3>{item.title}</h3>
-            <p>{item.description}</p>
           </div>
         ))}
       </div>

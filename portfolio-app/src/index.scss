@@ -194,9 +194,38 @@ a {
 
     .slide {
       display: none;
+      position: relative;
+      width: 100%;
+      height: 100%;
 
       &.active {
         display: block;
+      }
+
+      .img-card {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 250px;
+        aspect-ratio: 1 / 1;
+        background: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+
+        .profile-img {
+          position: inherit;
+        }
+
+        .card-title {
+          position: inherit;
+          margin-top: 50px;
+          color: black;
+        }
+      }
+
+      .description {
+        position: absolute;
       }
     }
   }
