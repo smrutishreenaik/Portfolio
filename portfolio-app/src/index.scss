@@ -173,16 +173,6 @@ a {
   position: relative;
   width: 100%;
 
-  .slider-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-
-    @media (max-width: 480px) {
-      display: none;
-    }
-  }
-
   .slider-wrapper {
     position: relative;
     background-color: black;
@@ -191,6 +181,32 @@ a {
     height: 80vh;
     text-align: center;
     color: white;
+
+    .slider-btn-left {
+      position: absolute;
+      bottom: 10%;
+      left: 40%;
+      background: white;
+      border: none;
+      cursor: pointer;
+
+      @media (max-width: 480px) {
+        display: none;
+      }
+    }
+
+    .slider-btn-right {
+      position: absolute;
+      bottom: 10%;
+      left: 60%;
+      background: white;
+      border: none;
+      cursor: pointer;
+
+      @media (max-width: 480px) {
+        display: none;
+      }
+    }
 
     .slide {
       display: none;
@@ -230,6 +246,7 @@ a {
           left: 50%;
           transform: translate(-50%, 0);
         }
+
         .card-title-designation {
           position: absolute;
           color: black;

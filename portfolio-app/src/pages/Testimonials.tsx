@@ -55,11 +55,6 @@ const Testimonials: React.FC = () => {
 
   return (
     <div className="slider-container">
-
-      <button className="slider-btn left d-none d-md-block" onClick={prevSlide}>
-        <IoIosArrowBack size={22} />
-      </button>
-
       <div
         className="slider-wrapper"
         onTouchStart={handleTouchStart}
@@ -80,12 +75,13 @@ const Testimonials: React.FC = () => {
             <h3>{item.title}</h3>
           </div>
         ))}
+        <button className="slider-btn-left" onClick={prevSlide}>
+          <IoIosArrowBack size={22} />
+        </button>
+        <button className="slider-btn-right" onClick={nextSlide}>
+          <IoIosArrowForward size={22} />
+        </button>
       </div>
-
-      <button className="slider-btn right d-none d-md-block" onClick={nextSlide}>
-        <IoIosArrowForward size={22} />
-      </button>
-
     </div>
   );
 };
