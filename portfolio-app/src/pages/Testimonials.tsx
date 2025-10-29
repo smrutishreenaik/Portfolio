@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import ProfileImg from "../assets/profilePic.jpeg"
 
 const items = [
   {
@@ -70,10 +71,11 @@ const Testimonials: React.FC = () => {
             className={`slide ${i === currentIndex ? "active" : "hidden"}`}
           >
             <div className="img-card">
-              <img src={item.image} alt={item.title} className="profile-img"/>
-              <div className="card-title">{item.title}</div>
+              <img src={ProfileImg} alt={item.title} className="profile-img" />
+              <div className="card-title-name">{item.title}</div>
+              <div className="card-title-designation">{item.title}</div>
             </div>
-            
+            <div className="slider-divider"></div>
             <div className="description">{item.description}</div>
             <h3>{item.title}</h3>
           </div>

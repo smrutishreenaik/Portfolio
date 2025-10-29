@@ -204,33 +204,56 @@ a {
 
       .img-card {
         position: absolute;
-        top: 50%;
+        top: 45%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 250px;
-        aspect-ratio: 1 / 1;
+        height: 300px;
         background: #ffffff;
         border: 1px solid #ddd;
         border-radius: 10px;
+        z-index: 1;
 
         .profile-img {
-          position: inherit;
+          border-radius: 10px;
+          position: absolute;
+          width: 100%;
+          aspect-ratio: 1 / 1;
+          transform: translate(-50%, 0);
+          object-fit: cover;
         }
 
-        .card-title {
-          position: inherit;
-          margin-top: 50px;
+        .card-title-name {
+          position: absolute;
           color: black;
+          bottom: 9%;
+          left: 50%;
+          transform: translate(-50%, 0);
+        }
+        .card-title-designation {
+          position: absolute;
+          color: black;
+          bottom: 1%;
+          left: 50%;
+          transform: translate(-50%, 0);
         }
       }
 
-      .description {
+      .slider-divider {
         position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 2px;
+        background-color: white;
+        height: 60vh;
       }
+    }
+
+    .description {
+      position: absolute;
     }
   }
 }
-
 
 .video-wrapper {
   position: relative;
