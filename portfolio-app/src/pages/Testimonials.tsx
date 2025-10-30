@@ -75,12 +75,14 @@ const Testimonials: React.FC = () => {
             <h3>{item.title}</h3>
           </div>
         ))}
-        <button className="slider-btn-left" onClick={prevSlide}>
-          <IoIosArrowBack size={22} />
-        </button>
-        <button className="slider-btn-right" onClick={nextSlide}>
-          <IoIosArrowForward size={22} />
-        </button>
+        <div className="slider-btn">
+          <button className="slider-btn-left" onClick={prevSlide}>
+            <IoIosArrowBack size={22} />
+          </button>
+          <button className="slider-btn-right" onClick={nextSlide}>
+            <IoIosArrowForward size={22} />
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -182,26 +182,25 @@ a {
     text-align: center;
     color: white;
 
-    .slider-btn-left {
+    .slider-btn {
       position: absolute;
+      width: 200px;
       bottom: 10%;
-      left: 40%;
-      background: white;
-      border: none;
-      cursor: pointer;
+      left: 50%;
+      transform: translate(-50%, 0);
 
-      @media (max-width: 480px) {
-        display: none;
+      .slider-btn-left {
+        margin-right: 40px;
+        background: white;
+        border: none;
+        cursor: pointer;
       }
-    }
 
-    .slider-btn-right {
-      position: absolute;
-      bottom: 10%;
-      left: 60%;
-      background: white;
-      border: none;
-      cursor: pointer;
+      .slider-btn-right {
+        background: white;
+        border: none;
+        cursor: pointer;
+      }
 
       @media (max-width: 480px) {
         display: none;
