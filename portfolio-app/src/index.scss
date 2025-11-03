@@ -181,40 +181,48 @@ a {
     height: 90vh;
     text-align: center;
     color: white;
-    
-    .slider-title{
-      position: absolute;  
+
+    .slider-title {
+      position: absolute;
       left: 50%;
       top: 4%;
-      font-size: 7rem;  
+      font-size: 7rem;
       font-weight: 700;
       transform: translate(-50%, 0);
       opacity: 0.5;
     }
-    .slider-desc{
+
+    .slider-desc {
       position: absolute;
       right: 20%;
-      top:60%
+      top: 60%
     }
 
     .slider-btn {
       position: absolute;
-      width: 200px;
+      gap: 40px;
       bottom: 10%;
       left: 50%;
       transform: translate(-50%, 0);
+      display: flex;
 
-      .slider-btn-left {
-        margin-right: 40px;
-        background: white;
-        border: none;
-        cursor: pointer;
-      }
-
+      .slider-btn-left,
       .slider-btn-right {
         background: white;
         border: none;
         cursor: pointer;
+        padding: 0;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          transform: scale(1.1);
+        }
       }
 
       @media (max-width: 480px) {
