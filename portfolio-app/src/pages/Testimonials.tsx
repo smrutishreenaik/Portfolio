@@ -1,29 +1,8 @@
 import React, { useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import ProfileImg from "../assets/profilePic.jpeg"
+import ProfileImg from "../assets/profilePic.jpeg";
+import {TestimonialItems as items} from "../constants/TestimonialItems";
 
-const items = [
-  {
-    title: "Bloom",
-    description: "Fresh beginnings with elegant design",
-    image: "https://via.placeholder.com/300x400/FF9999/fff?text=Bloom",
-  },
-  {
-    title: "Vivid",
-    description: "Bright and vibrant experiences",
-    image: "https://via.placeholder.com/300x400/9966FF/fff?text=Vivid",
-  },
-  {
-    title: "Petaled",
-    description: "Soft and smooth UI journey",
-    image: "https://via.placeholder.com/300x400/FFCC66/fff?text=Petaled",
-  },
-  {
-    title: "Elegant",
-    description: "Minimal yet powerful design",
-    image: "https://via.placeholder.com/300x400/66CC99/fff?text=Elegant",
-  },
-];
 
 const Testimonials: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

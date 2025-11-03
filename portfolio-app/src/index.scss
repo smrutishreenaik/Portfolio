@@ -194,8 +194,15 @@ a {
 
     .slider-desc {
       position: absolute;
-      right: 20%;
-      top: 60%
+      right: 1%;
+      top: 60%;
+      max-width: 600px;
+      text-align: justify;
+
+      @media (max-width: 480px) {
+        right: auto;
+        padding: 10px;
+      }
     }
 
     .slider-btn {
@@ -276,6 +283,10 @@ a {
           left: 50%;
           transform: translate(-50%, 0);
         }
+
+        @media (max-width: 480px) {
+        top: 34%;
+      }
       }
 
       .slider-divider {
@@ -285,11 +296,11 @@ a {
         width: 2px;
         background-color: white;
         height: 60vh;
-      }
-    }
 
-    .description {
-      position: absolute;
+        @media (max-width: 480px) {
+        display: none;
+      }
+      }
     }
   }
 }
