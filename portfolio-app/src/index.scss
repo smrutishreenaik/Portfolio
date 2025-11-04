@@ -245,6 +245,7 @@ a {
 
       &.active {
         display: block;
+        animation: fadeIn 1s ease-in-out;
       }
 
       .img-card {
@@ -285,8 +286,8 @@ a {
         }
 
         @media (max-width: 480px) {
-        top: 34%;
-      }
+          top: 34%;
+        }
       }
 
       .slider-divider {
@@ -298,10 +299,20 @@ a {
         height: 60vh;
 
         @media (max-width: 480px) {
-        display: none;
-      }
+          opacity: 0.2;
+        }
       }
     }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.3;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 
